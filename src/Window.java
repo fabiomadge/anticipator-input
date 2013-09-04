@@ -38,22 +38,28 @@ public class Window extends JFrame implements MouseMotionListener
 
 		Ellipse2D.Double sphere = new Ellipse2D.Double();
 		sphere.width = 14;
-    	sphere.height = 14;
-    	sphere.x = x - (sphere.width / 2);
-   		sphere.y = y - (sphere.height / 2);
-    	g2.draw(sphere);
+		sphere.height = 14;
+		sphere.x = x - (sphere.width / 2);
+		sphere.y = y - (sphere.height / 2);
+		g2.draw(sphere);
 	}
 
 	public void mouseDragged(MouseEvent e) {
-       x = e.getX();
-       y = e.getY();
+		x = e.getX();
+		y = e.getY();
 
-       l.update(((double) x) / size, ((double) y - 20) / size);
+		double xL = ((double) x)      / size;
+		double yL = ((double) y - 20) / size;
 
-       repaint();
-    }
+		if(xL > 1) xL = 1;
+		if(yL > 1) yL = 1;
 
-    public void mouseMoved(MouseEvent e) {
-    }
+		l.update(xL, yL);
+
+		repaint();
+	}
+
+	public void mouseMoved(MouseEvent e) {
+	}
 
 }
