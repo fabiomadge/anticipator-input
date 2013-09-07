@@ -1,4 +1,4 @@
-anticipator-input
+# anticipator-input
 
 *anticipator-input* is supposed to emulate real world data to the *anticipator* programm.
 
